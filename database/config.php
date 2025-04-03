@@ -1,10 +1,13 @@
 <?php
-header("Content-type: text/html; charset=utf-8");
+$host = getenv("mysql.railway.internal");
+$user = getenv("root");
+$pass = getenv("ZoloNNImfLiTeGzTAmDNpXPnObGceJDX");
+$dbname = getenv("railway");
 
+$conn = new mysqli($host, $user, $pass, $dbname);
 
-define('HOST', 'localhost');
-define('DATABASE', 'webbanhoa');
-define('USERNAME', 'root');
-define('PASSWORD', '');
-define('PRIVATE_KEY', 'kdjdhfajakjskjdjsdnjsdnjsdnsjndjndj');
+if ($conn->connect_error) {
+    die("Kết nối thất bại: " . $conn->connect_error);
+}
+
 ?>
