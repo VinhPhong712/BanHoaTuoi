@@ -1,0 +1,92 @@
+/* Định dạng tiêu đề đăng nhập */
+.login-title h3 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+/* Định dạng chú ý */
+.login-chu-y span {
+    text-align: center;
+}
+
+/* Căn giữa form đăng nhập */
+.container-form {
+    display: flex;
+    justify-content: center;
+}
+
+/* Định dạng form đăng nhập */
+.form-account {
+    width: max-content;
+}
+
+/* Định dạng nhóm các trường trong form */
+.form-group {
+    margin: 25px 0;
+}
+
+/* Định dạng nhãn cho các trường nhập */
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Định dạng ô nhập liệu */
+.form-group input {
+    width: 460px;
+    outline: none;
+    border: 1px solid rgb(216, 216, 216);
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 30px;
+    background-color: #fff;
+    transition: border-color 0.3s, box-shadow 0.3s; /* Thêm hiệu ứng chuyển màu viền và bóng mờ */
+}
+
+/* Hiệu ứng khi focus vào ô input */
+.form-group input:focus {
+    border-color: #91ad41; /* Thay đổi màu viền khi focus */
+    box-shadow: 0 0 5px rgba(145, 173, 65, 0.5); /* Thêm bóng mờ khi focus */
+}
+
+/* Định dạng nhóm nút đăng nhập */
+.group-btn {
+    margin-top: 35px;
+    display: flex;
+}
+
+/* Định dạng nút đăng nhập */
+.btn-account {
+    padding: 9px 17px;
+    font-size: 16px;
+    background-color: #91ad41;
+    color: #fff;
+    margin-right: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Thêm hiệu ứng khi hover */
+}
+
+/* Hiệu ứng khi hover trên nút */
+.btn-account:hover {
+    background-color: #7b9435; /* Đổi màu khi hover */
+}
+
+/* Định dạng link trong nhóm nút */
+.group-btn a {
+    padding-top: 12px;
+    color: #000;
+}
+
+/* Cải thiện responsive cho màn hình nhỏ */
+@media screen and (max-width: 740px) { 
+    .form-group input {
+        width: 90%; /* Đặt độ rộng ô nhập liệu là 90% của màn hình */
+    }
+
+    .btn-account {
+        width: 100%; /* Nút chiếm toàn bộ chiều rộng trên màn hình nhỏ */
+    }
+}

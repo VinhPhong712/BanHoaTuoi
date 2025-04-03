@@ -1,0 +1,11 @@
+# B? qua th? m?c không c?n thi?t
+vendor/
+.env
+cache/
+logs/
+tmp/
+uploads/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

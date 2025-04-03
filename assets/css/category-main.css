@@ -1,0 +1,192 @@
+/* Điều chỉnh thumbnail sản phẩm để ảnh không bị cắt */
+.product-thumnail {
+    border: 1px solid #f5f6fb;
+    overflow: hidden; /* Đảm bảo ảnh không tràn ra ngoài */
+    position: relative;
+    height: 200px; /* Thiết lập chiều cao cố định cho ảnh */
+    width: 100%; /* Đảm bảo chiều rộng khung là 100% */
+}
+
+/* Đảm bảo ảnh được thu nhỏ vừa với khung mà không bị cắt */
+.product-thumnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Thu nhỏ ảnh sao cho vừa với khung mà không bị cắt */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Hiệu ứng hover cho ảnh */
+.product-thumnail:hover img {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Đảm bảo tất cả các ảnh sản phẩm đều có chiều cao cố định và không bị kéo dài/méo */
+.product-info {
+    padding-top: 25px;
+    background-color: #f5f6fb;
+    padding-bottom: 25px;
+    min-height: 110px;
+    height: 100%; /* Đảm bảo container ảnh và thông tin đồng đều */
+}
+
+/* Đảm bảo thông tin sản phẩm không bị tràn ra ngoài */
+.product-info .product-name,
+.product-price {
+    font-size: 15px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Đảm bảo tên và giá không bị tràn ra ngoài */
+    white-space: nowrap; /* Ngắt dòng khi cần */
+}
+
+/* Hiệu ứng hover cho các sản phẩm */
+.content-tab-item {
+    transition: all ease 0.2s;
+    margin-top: 20px;
+}
+
+.content-tab-item:hover {
+    box-shadow: 0px 12px 16px rgb(0 0 0 / 12%);
+}
+
+/* Sửa phần header danh mục */
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border: 1px solid #91ad41;
+}
+
+.category-header h1 {
+    font-size: 22px;
+}
+
+/* Hiển thị danh mục bên trái */
+.sort-cate-left {
+    display: flex;
+}
+
+.sort-cate-left h3 {
+    font-size: 17px;
+    font-weight: 100;
+    margin-right: 15px;
+}
+
+/* Danh sách phân loại */
+.sort-cate-list {
+    display: flex;
+}
+
+.sort-cate-item {
+    margin-right: 10px;
+    margin-top: 2px;
+    position: relative;
+}
+
+/* Hiển thị biểu tượng khi hover */
+.sort-cate-item span {
+    height: 14px;
+    width: 14px;
+    border: 1px solid #cdcfdd;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    margin: -3px 5px 0 0;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Hiển thị biểu tượng khi hover vào item */
+.sort-cate-item i {
+    position: absolute;
+    left: 0.5px;
+    font-size: 12px;
+    top: 1px;
+    transition: all ease 0.3s;
+    display: none;
+}
+
+.sort-cate-item span:hover i {
+    display: block;
+}
+
+/* Trang phân trang */
+.pagination {
+    display: flex;
+    margin-top: 20px;
+}
+
+.total-page, .page-items,.next-page {
+    background-color: #eee;
+    padding: 6px 12px;
+    margin: 0 3px;
+    font-size: 15px;
+    border-radius: 5px;
+    color: #535353;
+}
+
+.total-page {
+    margin-right: 10px;
+}
+
+.next-page {
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+.page-current {
+    background-color: rgb(196, 196, 196);
+}
+
+/* Đảm bảo giao diện trên các thiết bị nhỏ hơn */
+@media screen and (max-width: 740px) {
+    .category-main {
+        margin: 0 10px;
+    }
+    .sort-cate-left {
+        display: none;
+    }
+    .category-header {
+        display: block !important;
+    }
+    .category-header h1 {
+        font-size: 18px;
+    }
+}
+.add-to-cart-btn {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff7e00; /* Màu cam */
+    background-color: transparent;
+    border: 2px solid #ff7e00; /* Viền cam */
+    border-radius: 5px; /* Bo góc */
+    padding: 10px 20px; /* Khoảng cách trong nút */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #ff7e00; /* Màu cam khi hover */
+    color: #fff; /* Chữ trắng khi hover */
+}
+/* CSS để căn cách đều các mục trong danh sách */
+.sort-cate-list {
+    display: flex; /* Sử dụng flexbox để các mục nằm ngang */
+    gap: 20px; /* Tạo khoảng cách giữa các mục */
+    list-style: none; /* Xóa dấu bullet mặc định */
+    padding: 0; /* Xóa padding mặc định của ul */
+}
+
+.sort-cate-item a {
+    text-decoration: none; /* Loại bỏ gạch chân */
+    color: #000; /* Màu chữ */
+    font-size: 16px; /* Kích thước chữ */
+}
+
+.sort-cate-item a:hover {
+    color: #0066CC; /* Đổi màu khi di chuột */
+    text-decoration: underline; /* Gạch chân khi hover */
+}
+
+
